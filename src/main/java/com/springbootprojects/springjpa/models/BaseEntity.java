@@ -29,7 +29,7 @@ public class BaseEntity {
     private LocalDateTime createdAt;
 
     @Column( nullable = false )
-    private LocalDateTime latModifiedAt;
+    private LocalDateTime lastModifiedAt;
 
     @Column( nullable = false )
     private String createdBy;
