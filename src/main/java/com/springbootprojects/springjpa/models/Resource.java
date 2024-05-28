@@ -35,13 +35,13 @@ public class Resource {
     private String name;
 
     @Column(
-    name = "lecture_size",
+    name = "resource_size",
     nullable = false
     )
     private int size;
 
     @Column(
-    name = "lecture_url",
+    name = "resource_url",
     nullable = false,
     length = 100
     )
