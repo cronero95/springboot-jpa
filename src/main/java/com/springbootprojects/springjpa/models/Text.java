@@ -1,5 +1,6 @@
 package com.springbootprojects.springjpa.models;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,6 +11,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@DiscriminatorValue("t")
 @Entity
 public class Text extends Resource {
 
