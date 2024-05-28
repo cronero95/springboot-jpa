@@ -2,9 +2,6 @@ package com.springbootprojects.springjpa.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
@@ -20,13 +17,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "lectures")
-public class Lecture {
-
-    @Id
-    @GeneratedValue(
-        strategy = GenerationType.AUTO
-    )
-    private Integer id;
+public class Lecture extends BaseEntity {
 
     @Column(
     name = "lecture_name",
