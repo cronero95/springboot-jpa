@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -39,4 +40,10 @@ public class Lecture {
         name = "section_id"
     )
     private Section section;
+
+    @OneToOne
+    @JoinColumn(
+        name = "resource_id"
+    )
+    private Resource resource;
 }
