@@ -6,12 +6,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@DiscriminatorValue("t")
+@SuperBuilder
+@DiscriminatorValue("text")
 @Entity
 public class Text extends Resource {
 

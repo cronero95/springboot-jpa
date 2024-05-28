@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@DiscriminatorValue("v")
+@DiscriminatorValue("video")
 @Entity
 public class Video extends Resource {
 
