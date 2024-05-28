@@ -25,7 +25,7 @@ public class Author {
     )
     private Integer id;
 
-   @Column(
+    @Column(
     name = "author_first_name",
     nullable = false,
     length = 50
