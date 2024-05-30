@@ -1,13 +1,23 @@
 package com.springbootprojects.springjpa.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 
 import com.springbootprojects.springjpa.models.Author;
+
+import jakarta.transaction.Transactional;
+
 import java.util.List;
 import java.util.Optional;
 
 
 public interface AuthorRepository extends JpaRepository<Author, Integer> {
+
+    @Modifying
+    @Transactional
+    @Query("update Author a set a.email = :email where a.id = :id")
+    void updateEmail(int id, String email);
 
     List<Author> findAllByFirstName(String firstName);
 
