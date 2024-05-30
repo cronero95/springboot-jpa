@@ -27,7 +27,5 @@ public interface AuthorRepository extends JpaRepository<Author, Integer> {
 
     int countAllByAge(int age);
 
-    List<Author> findAllByAgeNull(int age);
-
     Optional<Author> findFirstByLastName(String lastName);
 }
