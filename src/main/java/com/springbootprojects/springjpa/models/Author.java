@@ -10,11 +10,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
 @Entity
 @Table(name = "authors")
 public class Author extends BaseEntity {
@@ -37,7 +39,7 @@ public class Author extends BaseEntity {
     name = "author_email",
     nullable = false,
     unique = true,
-    length = 30
+    length = 100
     )
     private String email;
 

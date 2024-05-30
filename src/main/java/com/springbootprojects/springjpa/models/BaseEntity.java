@@ -11,11 +11,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
 @MappedSuperclass
 public class BaseEntity {
 
@@ -25,15 +27,15 @@ public class BaseEntity {
     )
     private Integer id;
 
-    @Column( nullable = false )
+    @Column( nullable = true )
     private LocalDateTime createdAt;
 
-    @Column( nullable = false )
+    @Column( nullable = true )
     private LocalDateTime lastModifiedAt;
 
-    @Column( nullable = false )
+    @Column( nullable = true )
     private String createdBy;
 
-    @Column( nullable = false )
+    @Column( nullable = true )
     private String lastModifiedBy;
 }
