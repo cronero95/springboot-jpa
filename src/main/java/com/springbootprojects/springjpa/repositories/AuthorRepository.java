@@ -3,6 +3,7 @@ package com.springbootprojects.springjpa.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.springbootprojects.springjpa.models.Author;
 
@@ -13,6 +14,8 @@ import java.util.Optional;
 
 
 public interface AuthorRepository extends JpaRepository<Author, Integer> {
+
+    List<Author> findByAgeSuperiorTo(@Param("age") int age);
 
     @Modifying
     @Transactional
