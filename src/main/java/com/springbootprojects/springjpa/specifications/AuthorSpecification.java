@@ -33,4 +33,28 @@ public class AuthorSpecification {
             return builder.like(root.get("firstName"), firstName);
         };
     }
+
+    public static Specification<Author> firstNameStartsWith(String firstNameStart) {
+        return(
+            Root<Author> root, 
+            CriteriaQuery<?> query, 
+            CriteriaBuilder builder
+        ) -> {
+            if(firstNameStart == null) return null;
+
+            return builder.like(root.get("firstName"), firstNameStart+"%");
+        };
+    }
+
+    public static Specification<Author> firstNameContains(String firstNameSection) {
+        return(
+            Root<Author> root, 
+            CriteriaQuery<?> query, 
+            CriteriaBuilder builder
+        ) -> {
+            if(firstNameSection == null) return null;
+
+            return builder.like(root.get("firstName"), "%"+firstNameSection+"%");
+        };
+    }
 }
